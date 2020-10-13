@@ -56,7 +56,7 @@ onAdressParse parsed codes (OnAdress ins) =
 
 operandAndByteParse :: String -> B.ByteString -> InsType -> (String, B.ByteString)
 operandAndByteParse parsed codes (OperandAndByte ins op) = 
-  (parsed ++ ins ++ " " ++ reg ++ ", " ++ (byteStringToStr $ B.take 1 codes) ++ "\n", B.tail codes)
+  (parsed ++ ins ++ " " ++ op ++ ", " ++ (byteStringToStr $ B.take 1 codes) ++ "\n", B.tail codes)
 
 numberOperandParse :: String -> B.ByteString -> InsType -> (String, B.ByteString)
 numberOperandParse parsed codes (NumberOperand ins op) = 
