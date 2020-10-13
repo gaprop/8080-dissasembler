@@ -33,9 +33,7 @@ parse parsed codes (Just c) =
     OnAdress _ -> onAdressParse parsed codes c
     OperandAndByte _ _ -> operandAndByteParse parsed codes c
     NumberOperand _ _ -> numberOperandParse parsed codes c
-
--- Everything below is complete dogshit
-----------------------------------------
+    
 noneOperandParse :: String -> B.ByteString -> InsType -> (String, B.ByteString)
 noneOperandParse parsed codes (NoneOperand ins) = 
   (parsed ++ ins ++ "\n", codes)
